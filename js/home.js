@@ -9,9 +9,24 @@ $(document).ready(function clock(argument) {
 	}
 
 	function drawClock() {
-		ctx.arc(0, 0,radius ,0 , 2 * Math.PI);
+		ctx.beginPath();
+		ctx.arc(0, 0,radius ,0 , 2 * Math.PI,"black");
 		ctx.fillStyle = "white";
 		ctx.fill();
+		
+		// Draw the categories
+		
+		//Number of categories
+		var n = 15;
+		for(var i=0;i<n;++i){
+			var cy = radius*Math.cos(i*((24*Math.PI)/180));
+			var cx = radius*Math.sin(i*((24*Math.PI)/180));
+			ctx.beginPath();
+			ctx.arc(cx, -cy,10,0 , 2 * Math.PI);
+			ctx.fillStyle = "blue";
+			ctx.fill();
+		}
 	}	
+	
 })
 
