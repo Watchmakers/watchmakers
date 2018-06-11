@@ -69,4 +69,8 @@ svg{
 	object-fit: contain;
 }
 
+.second-hand{
+	display:none;
+}
+
 
