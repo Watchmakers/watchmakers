@@ -1,5 +1,5 @@
 var radians = 0.0174532925, 
-	clockRadius = 200,
+	clockRadius = 250, //Change from 200
 	margin = 50,
 	width = (clockRadius+margin)*2,
     height = (clockRadius+margin)*2,
@@ -334,6 +334,6 @@ drawClock();
 setInterval(function(){
 	updateData();
 	moveHands();
-}, 30);
+}, 50);
 
 d3.select(self.frameElement).style("height", height + "px");
