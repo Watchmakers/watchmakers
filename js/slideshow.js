@@ -1,5 +1,5 @@
 var myIndex = 0;
-var time =[3000, 5000] ;
+var time =[9000, 5000, 7000 , 7000, 5000, 3000 , 5000, 3000] ;
 carousel();
 
 function carousel( ) {

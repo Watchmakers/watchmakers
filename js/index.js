@@ -19,7 +19,7 @@ var radians = 0.0174532925,
 
 
 
-var glob_time=0;
+var glob_time=180;
 
 
 
