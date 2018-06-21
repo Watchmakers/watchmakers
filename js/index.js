@@ -2,6 +2,8 @@ var window_width = screen.width;
 var window_height = screen.height;
 
 var clock_size = Math.min(window_width, window_height) * 0.7
+var clock_percentage = (clock_size * 100)/ window_width
+var margin_clock = (((100 - clock_percentage) / 2) * window_width) / 100
 
 
 var radians = 0.0174532925, 
@@ -220,7 +222,8 @@ function drawClock(){ //create all the clock elements
 	var svg = d3.select("#container")
 		.append("svg")
 	    .attr("width", clock_size)
-	    .attr("height", clock_size);
+	    .attr("height", clock_size)
+        .attr("left", margin_clock);
 
 	var face = svg.append('g')
 		.attr('id','clock-face')
