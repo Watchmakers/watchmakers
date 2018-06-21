@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Watchmakers</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/makeDay.css">
+    <link rel="stylesheet" type="text/css" href="css/button_library.css">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+	<meta charset="utf-8">
+
+</head>
+
+
+<body>
+
+	<header class="header">
+		<p>BUILD YOUR OWN DAY</p>
+	</header>
+
+	<div class="row content">
+	    <div class="col-sm-3 sidenav settings">
+	      <form>
+	      	<label>Select your country
+	      		<select id="monselect">
+					<option value="valeur1">Valeur 1</option> 
+					<option value="valeur2" selected>Valeur 2</option>
+					<option value="valeur3">Valeur 3</option>
+				</select>
+			</label>
+
+			<br>
+
+			<label>Sex
+				<div class="switch">
+					<input type="radio" class="switch-input" name="view" value="week" id="week" checked>
+					<label for="week" class="switch-label switch-label-off">M</label>
+					<input type="radio" class="switch-input" name="view" value="month" id="month">
+					<label for="month" class="switch-label switch-label-on">F</label>
+					<span class="switch-selection"></span>
+				</div>
+			</label>
+
+			<br>
+
+			<label>Select a week day
+	      		<select id="monselect">
+					<option value="Monday">Monday</option>
+					<option value="Tuesday">Tuesday</option>
+					<option value="Wednesday">Wednesday</option>
+					<option value="Thursday">Thursday</option>
+					<option value="Friday">Friday</option>
+					<option value="Saturday">Saturday</option>
+					<option value="Sunday">Sunday</option>
+				</select>
+			</label>
+
+			<br>
+
+			<label>At what time you sleep
+	      		<input type="time" name="sleep" value="23:00">
+			</label>
+
+			<br>
+
+			<label>At what time you wake up
+	      		<input type="time" name="wakeup" value="06:30">
+			</label>
+
+			<br>
+
+			<label>Categories<br>
+	      		<select id="monselect">
+					<option value="Monday">Monday</option>
+					<option value="Tuesday">Tuesday</option>
+					<option value="Wednesday">Wednesday</option>
+					<option value="Thursday">Thursday</option>
+					<option value="Friday">Friday</option>
+					<option value="Saturday">Saturday</option>
+					<option value="Sunday">Sunday</option>
+				</select>
+				<input type="time" name="sleep" value="23:00">
+			</label>
+
+			<br>
+
+			<label><button id="add_activity"> + </button>Add an activity ...</label>
+
+
+	    </form>
+	     
+	    </div>
+
+		<div class="col-sm-9 graph">
+
+
+			
+
+			<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+			<script src="js/BuildChart.js"></script>
+
+		</div>
+	</div>
+
+
+	<footer class="container-fluid">
+		<p>©2018 PROUDLY CREATED BY ALEXANDRE, MARIA, MARION, MIA, THEO</p>
+	</footer>
+
+
+</body>
+
+</html>
