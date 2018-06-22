@@ -3,18 +3,29 @@
 	color: #b4b7b8;
 }
 
-.previous{
-	vertical-align:bottom;
+select{
+	    background-color: white; /* background */
+border: 1px solid #8faac4; /* border */
+	color: #8faac4; /* White text */
+    padding: 10px 17px; /* Some padding */
+   
 }
 
-
 .btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
+    background-color: #8faac4; /* background */
+    border: 1px solid white; /* border */
+	color: white; /* White text */
+    padding: 10px 17px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.btn-group button:first-child{
+  border-radius:  3px 0 0 3px ;
 }
 
 .btn-group button:not(:last-child) {
@@ -30,5 +41,14 @@
 
 /* Add a background color on hover */
 .btn-group button:hover {
-    background-color: #3e8e41;
+    background-color: #4a759e;
+}
+
+.btn-group button.active {
+    background-color: #4a759e;
+}
+
+
+.firstfilters{
+	margin-top:3%;
 }
