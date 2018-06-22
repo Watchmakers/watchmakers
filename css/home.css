@@ -30,18 +30,25 @@ body{
 	margin-top:4%;
 }
  
+ #selectCountry{
+	color:#b4b7b8;
+	padding-right:25px;
+	padding-top:5px;
+	margin-bottom:0px;
+ }
+ 
 select{
 	background-color: white; /* background */
 	border: 1px solid #8faac4; /* border */
 	color: #8faac4; /* White text */
-	padding: 10px 17px; /* Some padding */
+	padding: 5px 17px; /* Some padding */
    }
 
 .btn-group button {
-    background-color: #8faac4; /* background */
-    border: 1px solid white; /* border */
-	color: white; /* White text */
-    padding: 5px 17px; /* Some padding */
+    background-color: white; /* background */
+    border: 1px solid #8faac4; /* border */
+	color: #8faac4; /* White text */
+    padding: 5px 16px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
 }
@@ -67,11 +74,13 @@ select{
 
 /* Add a background color on hover */
 .btn-group button:hover {
-    background-color: #4a759e;
+    background-color: #8faac4;
+	color:white;
 }
 
 .btn-group button.active {
-    background-color: #4a759e;
+    background-color: #8faac4;
+	color:white;
 }
 
 /* charts */
