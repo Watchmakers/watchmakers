@@ -11,6 +11,7 @@
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 	<meta charset="utf-8">
 
@@ -75,21 +76,25 @@
 			<br>
 
 			<label>Categories<br>
-	      		<select id="monselect">
-					<option value="Monday">Monday</option>
-					<option value="Tuesday">Tuesday</option>
-					<option value="Wednesday">Wednesday</option>
-					<option value="Thursday">Thursday</option>
-					<option value="Friday">Friday</option>
-					<option value="Saturday">Saturday</option>
-					<option value="Sunday">Sunday</option>
-				</select>
-				<input type="time" name="sleep" value="23:00">
+				<div id="selectActivity">
+		      		<select id="monselect">
+						<option value="Monday">Eat</option>
+						<option value="Tuesday">Drink</option>
+						<option value="Wednesday">Watch WorldCup</option>
+						<option value="Thursday">Code</option>
+						<option value="Friday">Sleep</option>
+						<option value="Saturday">Start Again</option>
+					</select>
+					<input type="time" name="sleep" value="23:00">
+					<input type="button" id="remove_activity" value="-" onclick="removeActivity()">
+				</div>
 			</label>
 
 			<br>
 
-			<label><button id="add_activity"> + </button>Add an activity ...</label>
+			<label><input type="button" id="add_activity" value="+" onclick="addActivity()"> Add an activity ...</label>
+
+			<!-- <label onclick="addActivity()">Add an activity</label>			 -->
 
 
 	    </form>
