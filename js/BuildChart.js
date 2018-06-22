@@ -61,21 +61,14 @@ document.getElementsByClassName('highcharts-credits')[0].innerHTML = "";
 var i = 0;
 function addActivity(){
     var original = document.getElementById('selectActivity');
-    
-    var clone = original.cloneNode(true); // "deep" clone
+    var clone = original.cloneNode(true);
     clone.id = "selectActivity" + ++i;
     clone.name = i
+    clone.getElementsByClassName('removeActiv')[0].setAttribute('onclick', 'removeActivity(' + i +')')
     original.parentNode.appendChild(clone);
 }
 
-var i = 0;
-function removeActivity(){
-    $(document).ready(function() {
-        $(this).click(function(event) {
-            alert(event.parent().id);
-        });
-    });
-    id = this.attr('id')
-    console.log(this)
-    element = document.getElementById(id).remove();
+
+function removeActivity(i){
+    document.getElementById("selectActivity" + i).remove()
 }
