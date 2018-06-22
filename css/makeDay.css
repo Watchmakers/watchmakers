@@ -18,6 +18,14 @@ header{
 	color:rgb(255,255,255);
 }
 
+#remove_activity{
+	width:30px;
+	height:30px;
+	border-radius: 20px;
+	background-color:#e03131;
+	color:rgb(255,255,255);
+}
+
 
 footer{
 	height:10%;
