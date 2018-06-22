@@ -77,30 +77,69 @@ svg{
 }
 
 #img_1{
-  top:410px;
-  left:66%;
+  top:38%;
+  left:70%;
 }
 
 #img_2{
-  top:670px;
-  left:40%;
+  top:74%;
+  left:34%;
 }
 
 #img_3{
-  top:460px;
-  left:26%;
-}
-
-#img_3_5{
-  top:130px;
-  left:30%;
+  top:47%;
+  left:22%;
 }
 
 #img_4{
-  top:40px;
-  left:51%;
+  top:12%;
+  left:27%;
 }
 
+#img_5{
+  top:4%;
+  left:59%;
+}
+
+#img_6{
+  top:27%;
+  left:69%;
+}
+
+#img_7{
+  top:44%;
+  left:70%;
+}
+
+#img_8{
+  top:65%;
+  left:64%;
+}
+
+#img_9{
+  top:74%;
+  left:34%;
+}
+
+#img_10{
+  top:48%;
+  left:22%;
+}
+
+#img_11{
+  top:13%;
+  left:26%;
+}
+
+#img_12{
+  top:1%;
+  left:39%;
+}
+
+#img_13{
+  top:8%;
+  left:62%;
+}
 
 
 .second-hand{
@@ -120,6 +159,7 @@ svg{
   cursor: pointer;
   vertical-align: middle;
   margin: 5px;
+  bottom:1%;
 }
 
 .button span {
@@ -161,7 +201,7 @@ svg{
 }
 
 svg{
-  margin-top:100px;
+  margin-top:10%;
   position:relative;
 
 }
