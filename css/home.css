@@ -1,21 +1,47 @@
+body{
+	overflow-x: hidden;
+}
+
+/* title and navigation buttons */
+.nav-header{
+	margin-top:3%;
+}
+
 .title{
 	text-align: center;
 	color: #b4b7b8;
 }
 
-select{
-	    background-color: white; /* background */
-border: 1px solid #8faac4; /* border */
-	color: #8faac4; /* White text */
-    padding: 10px 17px; /* Some padding */
-   
+#previous, #next{
+	cursor: pointer;
+}	
+
+#previous:hover{
+  margin-left: -25px;
+ }
+
+ #next:hover{
+  margin-right: -25px;
+ }
+
+/* filters - first row*/
+
+.firstfilters{
+	margin-top:4%;
 }
+ 
+select{
+	background-color: white; /* background */
+	border: 1px solid #8faac4; /* border */
+	color: #8faac4; /* White text */
+	padding: 10px 17px; /* Some padding */
+   }
 
 .btn-group button {
     background-color: #8faac4; /* background */
     border: 1px solid white; /* border */
 	color: white; /* White text */
-    padding: 10px 17px; /* Some padding */
+    padding: 5px 17px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
 }
@@ -48,7 +74,7 @@ border: 1px solid #8faac4; /* border */
     background-color: #4a759e;
 }
 
-
-.firstfilters{
-	margin-top:3%;
+/* charts */
+#chart1, #chart2{
+	margin-top:5%;
 }

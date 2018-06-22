@@ -15,24 +15,31 @@
 <body>
 
 	<div class="container">
-		<div class="row">
-			<div class = "title col-3 previous">
-				<p class="text-left"><i class="fa fa-angle-double-left"></i>
-				Back to home page
+		
+		<div class="row nav-header">
+			<div class = "col-3 " style="margin-top:1.5%;">
+				<a href="index.html" style="text-decoration: none;"><p class="text-left title" id="previous">
+				<i class="fa fa-angle-double-left"></i>
+				Back to landing page
 				</p>
+				</a>
 			</div>
 			<div class = "title col-6">
 				<h1> TIME SPENT ANALYSIS </h1>
 			</div>
-			<div class = "title col-3">
-				<span class="align-bottom">Build your own day
+			<div class = "col-3" style="margin-top:1.5%;" >
+				<a href="make_own_day.html" style="text-decoration: none;"><p class="title" id="next"><span>
+				Build your own day
 				<i class="fa fa-angle-double-right"></i></span>
+				</p>
+				</a>
 			</div>
-
 		</div>
 
+		<hr>
+		
 		<div class="row firstfilters">
-		<div class="days btn-group">
+		<div class="days btn-group offset-1">
 			<button class="daysclass active">
 				All days
 			</button >
@@ -51,15 +58,13 @@
 			<select>
 			  <option value="alleurope">All Europe</option>
 			  <option value="France">France</option>
-
 			</select>
 		</div>
-		
 		</div>
 
 		<br>
 
-		<div class="row">
+		<div class="row offset-1">
 			<div class = "">
 				<div class="btn-group">
 					<button class="gender active">
