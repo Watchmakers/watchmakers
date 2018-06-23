@@ -5,6 +5,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/makeDay.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/button_library.css">
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 
@@ -13,6 +17,8 @@
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+
+
 	<meta charset="utf-8">
 
 </head>
@@ -20,12 +26,29 @@
 
 <body>
 
-	<header class="header">
-		<p>BUILD YOUR OWN DAY</p>
-	</header>
+	<div class="row nav-header">
+			<div class = "col-3 " style="margin-top:1.5%;">
+				<a href="index.html" style="text-decoration: none;"><p class="text-left title" id="previous">
+				<i class="fa fa-angle-double-left"></i>
+				Back to landing page
+				</p>
+				</a>
+			</div>
+			<div class = "title col-6">
+				<h1> TIME SPENT ANALYSIS </h1>
+			</div>
+			<div class = "col-3" style="margin-top:1.5%;" >
+				<a href="make_own_day.html" style="text-decoration: none;"><p class="title" id="next"><span>
+				Build your own day
+				<i class="fa fa-angle-double-right"></i></span>
+				</p>
+				</a>
+			</div>
+		</div>
+		<hr>
 
 	<div class="row content">
-	    <div class="col-sm-3 sidenav settings">
+	    <div class="col-sm-3 sidenav settings" style="padding-left: 2%;">
 	      <form>
 	      	<label>Select your country
 	      		<select id="monselect">
@@ -64,28 +87,28 @@
 			<br>
 
 			<label>At what time you sleep
-	      		<input type="time" name="sleep" value="23:00">
+	      		<input type="time" name="sleep" id="sleep" value="23:00">
 			</label>
 
 			<br>
 
 			<label>At what time you wake up
-	      		<input type="time" name="wakeup" value="06:30">
+	      		<input type="time" name="wakeup" id="wakeup" value="06:30">
 			</label>
 
 			<br>
 
 			<label>Categories<br>
-				<div id="selectActivity">
+				<div id="selectActivity" class="selectActivityClass">
 		      		<select id="monselect">
-						<option value="Monday">Eat</option>
-						<option value="Tuesday">Drink</option>
-						<option value="Wednesday">Watch WorldCup</option>
-						<option value="Thursday">Code</option>
-						<option value="Friday">Sleep</option>
-						<option value="Saturday">Start Again</option>
+						<option value="Eat">Eat</option>
+						<option value="Drink">Drink</option>
+						<option value="Watch WorldCup">Watch WorldCup</option>
+						<option value="Code">Code</option>
+						<option value="Sleep">Sleep</option>
+						<option value="Start Again">Start Again</option>
 					</select>
-					<input type="time" name="sleep" value="23:00">
+					<input type="number" name="sleep" value="2">hours
 					<input class="removeActiv" type="button" id="remove_activity" value="-" onclick="removeActivity()">
 				</div>
 			</label>
@@ -93,6 +116,10 @@
 			<br>
 
 			<label><input type="button" id="add_activity" value="+" onclick="addActivity()"> Add an activity ...</label>
+
+			<br>
+
+			<input type="button" class="greenButton" id="build" value="Build" onclick="buildPie()">
 
 			<!-- <label onclick="addActivity()">Add an activity</label>			 -->
 
@@ -109,6 +136,9 @@
 			<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 			<script src="js/BuildChart.js"></script>
+			<!--<script src="js/buildPie.js"></script>-->
+
+			<input type="button" class="greenButton" id="submit" value="Submit" onclick="submit()">
 
 		</div>
 	</div>
@@ -118,6 +148,7 @@
 		<p>©2018 PROUDLY CREATED BY ALEXANDRE, MARIA, MARION, MIA, THEO</p>
 	</footer>
 
+	
 
 </body>
 

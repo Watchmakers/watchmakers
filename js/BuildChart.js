@@ -13,7 +13,7 @@ var pieColors = (function () {
 }());
 
 // Build the chart
-Highcharts.chart('container', {
+var chart = Highcharts.chart('container', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -46,12 +46,7 @@ Highcharts.chart('container', {
     series: [{
         name: 'Share',
         data: [
-            { name: 'Chrome', y: 61.41 },
-            { name: 'Internet Explorer', y: 11.84 },
-            { name: 'Firefox', y: 10.85 },
-            { name: 'Edge', y: 4.67 },
-            { name: 'Safari', y: 4.18 },
-            { name: 'Other', y: 7.05 }
+            { name: 'Eat', y: 1 }
         ]
     }]
 });
@@ -70,5 +65,62 @@ function addActivity(){
 
 
 function removeActivity(i){
-    document.getElementById("selectActivity" + i).remove()
+    document.getElementById("selectActivity" + i).remove();
+    buildPie();
+}
+
+
+
+function buildPie(){
+
+        /*
+    Must add sleeping time
+
+    var sleep = document.getElementById("sleep").value.split(":");
+    var wakeup = document.getElementById("wakeup").value.split(":");
+    
+    
+    alert(sleep[0] +" "+sleep[1]);
+    alert(wakeup[0]+" "+wakeup[1]);
+    hours=0
+    minutes=0
+
+    if(sleep[0]<24) hours=(24-sleep[0])+wakeup[0];
+*/
+
+
+    var sel = document.getElementsByClassName("selectActivityClass");
+    var len = sel.length;
+    var data=[];
+    var initial=chart.series[0].data.length;
+
+    for (i=0; i<len; i++){
+        data.push({name:sel[i].children[0].value , y: parseInt(sel[i].children[1].value)})
+
+        if (initial>i){
+            chart.series[0].data[i].update({name:sel[i].children[0].value , y: parseInt(sel[i].children[1].value)});
+        }
+        else{
+            chart.series[0].addPoint({name:sel[i].children[0].value , y: parseInt(sel[i].children[1].value)});
+        }
+
+        
+    }
+
+    var initial=chart.series[0].data.length;
+
+    if (len<initial){
+        var j=len;
+        while (j<initial){
+            chart.series[0].data[len].remove();
+            j++;
+        }
+    }
+
+
+    //document.getElementsByClassName("highcharts-container")[0].remove();
+
+    //chart.series[0].data[0].update(i % 2 ? 200 : 0);
+    
+
 }
