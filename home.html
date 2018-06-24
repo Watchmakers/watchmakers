@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="js/RadarChart.js"></script>
-	
 
 </head>
 <body>
@@ -56,16 +55,17 @@
 				Select your country
 			</p>
 			<select>
-			  <option value="alleurope">All Europe</option>
-			  <option value="France">France</option>
+				<option value="alleurope">All Europe</option>
+				<option value="France">France</option>
 			</select>
+			
 		</div>
 		</div>
 
 		<br>
 
 		<div class="row">
-			<div class = " offset-1">
+			<div class = "offset-1">
 				<div class="btn-group">
 					<button class="gender active">
 						Both
@@ -79,12 +79,12 @@
 				</div>
 			</div>
 			
-				<div class="countries btn-group offset-3">
+			<div class="countries btn-group offset-3">
 					
-<p id="selectCountry" >
-						Select the activities
-					</p>
-					<form>
+				<p id="selectCountry" >
+					Select the activities
+				</p>
+				<form>
 		  <div class="multiselect">
 			<div class="selectBox" onclick="showCheckboxes()">
 			
@@ -102,7 +102,17 @@
 				<input type="checkbox" id="three" />Third checkbox</label>
 			</div>
 		  </div>
-		</form>
+					<!-- <select class="selectpicker" multiple>
+						<option>All Europe</option>
+						<option>France</option>
+						<option>Lebanon</option>
+						<option>PDLT</option>
+						<option>Achrafieh</option>
+						<option>Puteaux</option>
+						<option>Vanves</option>
+					</select> -->
+
+				</form>
 		</div>
 		
 
@@ -143,6 +153,7 @@ function showCheckboxes() {
     expanded = false;
   }
 }
+
 		</script>
 
 

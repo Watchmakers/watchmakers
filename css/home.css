@@ -42,7 +42,7 @@ select{
 	border: 1px solid #8faac4; /* border */
 	color: #8faac4; /* White text */
 	padding: 5px 17px; /* Some padding */
-   }
+}
 
 .btn-group button {
     background-color: white; /* background */
@@ -116,10 +116,14 @@ select{
   border: 1px #dadada solid;
 }
 
-#checkboxes label {
+#checkboxes {
   display: block;
-    z-index: 10000;
+  z-index: 1000;
+  position: absolute;
+}
 
+#checkboxes label {
+  z-index: 1000;
 }
 
 #checkboxes label:hover {
