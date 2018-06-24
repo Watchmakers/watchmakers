@@ -21,7 +21,7 @@ var chart = Highcharts.chart('container', {
         type: 'pie'
     },
     title: {
-        text: 'Browser market shares at a specific website, 2014'
+        text: 'Your typical day'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -46,7 +46,7 @@ var chart = Highcharts.chart('container', {
     series: [{
         name: 'Share',
         data: [
-            { name: 'Eat', y: 1 }
+            { name: '', y: 1 }
         ]
     }]
 });

@@ -26,46 +26,41 @@
 
 <body>
 
+<div class="container">
+
 	<div class="row nav-header">
 			<div class = "col-3 " style="margin-top:1.5%;">
-				<a href="index.html" style="text-decoration: none;"><p class="text-left title" id="previous">
+				<a href="home.html" style="text-decoration: none;"><p class="text-left title" id="previous">
 				<i class="fa fa-angle-double-left"></i>
-				Back to landing page
+				Back to Homepage
 				</p>
 				</a>
 			</div>
 			<div class = "title col-6">
 				<h1> TIME SPENT ANALYSIS </h1>
 			</div>
-			<div class = "col-3" style="margin-top:1.5%;" >
-				<a href="make_own_day.html" style="text-decoration: none;"><p class="title" id="next"><span>
-				Build your own day
-				<i class="fa fa-angle-double-right"></i></span>
-				</p>
-				</a>
 			</div>
-		</div>
-		<hr>
+		<hr id="myhr">
 
 	<div class="row content">
 	    <div class="col-sm-4 sidenav settings" style="padding-left: 2%;">
 	      <form>
 	      	<label>Select your country
 	      		<select id="monselect">
-					<option value="valeur1">Valeur 1</option> 
-					<option value="valeur2" selected>Valeur 2</option>
-					<option value="valeur3">Valeur 3</option>
+					<option value="valeur1">France</option> 
+					<option value="valeur2" >Allemagne</option>
+					<option value="valeur3">Toutoune party</option>
 				</select>
 			</label>
 
 			<br>
 
-			<label>Sex
+			<label id="sex">Sex
 				<div class="switch">
-					<input type="radio" class="switch-input" name="view" value="week" id="week" checked>
-					<label for="week" class="switch-label switch-label-off">M</label>
-					<input type="radio" class="switch-input" name="view" value="month" id="month">
-					<label for="month" class="switch-label switch-label-on">F</label>
+					<input type="radio" class="switch-input" name="view" value="male" id="male" checked>
+					<label for="male" class="switch-label switch-label-off">M</label>
+					<input type="radio" class="switch-input" name="view" value="female" id="female">
+					<label for="female" class="switch-label switch-label-on">F</label>
 					<span class="switch-selection"></span>
 				</div>
 			</label>
@@ -84,17 +79,6 @@
 				</select>
 			</label>
 
-			<br>
-
-			<label>At what time you sleep
-	      		<input type="time" name="sleep" id="sleep" value="23:00">
-			</label>
-
-			<br>
-
-			<label>At what time you wake up
-	      		<input type="time" name="wakeup" id="wakeup" value="06:30">
-			</label>
 
 			<br>
 
@@ -116,7 +100,7 @@
 						<option value="Transportations">Transportations</option>
 						<option value="Unspecified">Unspecified</option>
 					</select>
-					<input type="number" name="sleep" value="2">hours
+					<input id="hours" type="number" name="sleep" value="2">hours
 					<input class="removeActiv" type="button" id="remove_activity" value="-" onclick="removeActivity()">
 				</div>
 			</label>
@@ -151,10 +135,7 @@
 		</div>
 	</div>
 
-
-	<footer class="container-fluid">
-		<p>©2018 PROUDLY CREATED BY ALEXANDRE, MARIA, MARION, MIA, THEO</p>
-	</footer>
+</div>
 
 	
 
