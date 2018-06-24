@@ -37,102 +37,21 @@
 				</a>
 			</div>
 			<div class = "title col-6">
-				<h1> TIME SPENT ANALYSIS </h1>
+				<h1> BUILD YOUR OWN DAY </h1>
 			</div>
 			</div>
 		<hr id="myhr">
 
 	<div class="row content">
-	    <div class="col-sm-4 sidenav settings" style="padding-left: 2%;">
-	      <form>
-	      	<label>Select your country
-	      		<select id="monselect">
-					<option value="valeur1">France</option> 
-					<option value="valeur2" >Allemagne</option>
-					<option value="valeur3">Toutoune party</option>
-				</select>
-			</label>
-
-			<br>
-
-			<label id="sex">Sex
-				<div class="switch">
-					<input type="radio" class="switch-input" name="view" value="male" id="male" checked>
-					<label for="male" class="switch-label switch-label-off">M</label>
-					<input type="radio" class="switch-input" name="view" value="female" id="female">
-					<label for="female" class="switch-label switch-label-on">F</label>
-					<span class="switch-selection"></span>
-				</div>
-			</label>
-
-			<br>
-
-			<label>Select a week day
-	      		<select id="monselect">
-					<option value="Monday">Monday</option>
-					<option value="Tuesday">Tuesday</option>
-					<option value="Wednesday">Wednesday</option>
-					<option value="Thursday">Thursday</option>
-					<option value="Friday">Friday</option>
-					<option value="Saturday">Saturday</option>
-					<option value="Sunday">Sunday</option>
-				</select>
-			</label>
+			<div id="container1" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 
-			<br>
+			<div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
-			<label>Categories<br>
-				<div id="selectActivity" class="selectActivityClass">
-		      		<select id="monselect"> <!-- style="width: 120px"> -->
-						<option value="Personal care">Personal care</option>
-						<option value="Sleep">Sleep</option>
-						<option value="Eating">Eating</option>
-						<option value="Sport">Sport</option>
-						<option value="Home maintenance">Home maintenance</option>
-						<option value="Pet care">Pet care</option>
-						<option value="Child care">Child care</option>
-						<option value="Shopping">Shopping</option>
-						<option value="Leisure, social and associative life">Leisure, social and associative life</option>
-						<option value="Household and family care">Household and family care</option>
-						<option value="Work / Study">Work / Study</option>
-						<option value="Travel">Travel</option>
-						<option value="Transportations">Transportations</option>
-						<option value="Unspecified">Unspecified</option>
-					</select>
-					<input id="hours" type="number" name="sleep" value="2">hours
-					<input class="removeActiv" type="button" id="remove_activity" value="-" onclick="removeActivity()">
-				</div>
-			</label>
-
-			<br>
-
-			<label><input type="button" id="add_activity" value="+" onclick="addActivity()"> Add an activity ...</label>
-
-			<br>
-
-			<input type="button" class="greenButton" id="build" value="Build" onclick="buildPie()">
-
-			<!-- <label onclick="addActivity()">Add an activity</label>			 -->
-
-
-	    </form>
-	     
-	    </div>
-
-		<div class="col-sm-8 graph">
-
-
-			
-
-			<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-
-			<script src="js/BuildChart.js"></script>
+			<script src="js/buildTwoCharts.js"></script>
 			<!--<script src="js/buildPie.js"></script>-->
 
-			<input type="button" class="greenButton" id="submit" value="Submit" onclick="submit()">
 
-		</div>
 	</div>
 
 </div>
