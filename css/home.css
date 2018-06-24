@@ -86,4 +86,42 @@ select{
 /* charts */
 #chart1, #chart2{
 	margin-top:5%;
+	z-index:0;
+}
+
+
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  display:inline;
+}
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+    z-index: 10000;
+
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
 }
