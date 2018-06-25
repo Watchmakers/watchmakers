@@ -16,24 +16,48 @@ CORS(app)
 
 data = pd.read_csv("dataTimeUse.csv", sep = ",", index_col = 0)
 
-@app.route('/Homepage', methods = ['GET', 'POST'])
+@app.route('/Countries', methods = ['GET', 'POST'])
+def getCountries():
+	countries =  list(data['COUNTRY'].unique())
+	countries = [x for x in countries if str(x) != 'nan']
+	answer = {
+				'Countries' : countries
+		}
+
+	return jsonify(answer)
+
+@app.route('/Activities', methods = ['GET', 'POST'])
+def getActivities():
+	categories =  list(data['CATEGORY'].unique())
+
+	answer = {
+				'Categories' : categories
+		}
+
+	return jsonify(answer)
+	
+
+@app.route('/PersonalData', methods = ['GET'])
 def getDataHomePage():
 
 	# Argument part for API calls
 	
-	# country = request.args['country'].title()
-	# daysweek = request.args['daysweek']
-	# sex = request.args['sex']
-	# categories = request.args['categories']
+	country = request.args['country']
+	daysweek = request.args['daysweek']
+	sex = request.args['sex']
+	categories = request.args['categories'].split(", ")
 
 	# TEST PART 
-	country = 'France'
-	daysweek = 'All days of the week'
-	sex = 'Males'
-	categories = ['Eating', 'Household and family care', "Leisure, social and associative life"]
+	# country = 'France'
+	# daysweek = 'All days of the week'
+	# sex = 'Males'
+	# categories = ['Eating', 'Household and family care', "Leisure and social and associative life"]
+	# print(categories)
 
 	results2000 = data[(data['YEAR'] == 2000) & (data['COUNTRY'] == country) & (data['DAYSWEEK'] == daysweek) & (data['SEX'] == sex) & (data['CATEGORY'].isin(categories))]
 	results2010 = data[(data['YEAR'] == 2010) & (data['COUNTRY'] == country) & (data['DAYSWEEK'] == daysweek) & (data['SEX'] == sex) & (data['CATEGORY'].isin(categories))]
+
+	print(results2000)
 
 	# 2000 Part
 
@@ -101,6 +125,7 @@ def getDataHomePage():
 				}
 
 	return jsonify(answer)
+
 
 if __name__ == '__main__':
 	app.run(debug = True)
