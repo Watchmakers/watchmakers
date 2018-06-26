@@ -39,7 +39,28 @@ function changeCountry(){
 
 //act
 function actCheck(acti){
-	alert(acti);
+
+	if(acti.id != "All_Activities"){
+		document.getElementById("All_Activities").checked = false
+	}
+	else{
+		checked = document.getElementById("All_Activities").checked
+		if(checked){
+			document.getElementById("All_Activities").checked = true
+			checkboxes = document.getElementById("checkboxes")
+			for(var i = 0; i < checkboxes.childElementCount ; i++){
+				checkboxes.children[i].children[0].checked = true
+				i++
+			}
+		}
+		else{
+			checkboxes = document.getElementById("checkboxes")
+			for(var i = 0; i < checkboxes.childElementCount ; i++){
+				checkboxes.children[i].children[0].checked = false
+				i++
+			}
+		}
+	}
 }
 
 //Functions activities
@@ -66,7 +87,7 @@ function addActivities(){
 country = "France"
 daysweek = "All days of the week" 
 sex = "Males"
-categories = "Home maintenance, Child care, Eating, Household and family care, Leisure and social and associative life, Personal care, Pet care, Shopping, Sleep, Sport, Transportations, Travel, Unspecified, Work / Study"
+categories = "Home maintenance, Child care, Eating, Household, Leisure, Personal care, Pet care, Shopping, Sleep, Sport, Transportations, Travel, Unspecified, Work / Study"
 
 var urlAPI1 = urlAPI + '/PersonalData?country=' + country + '&daysweek=' + daysweek 
  + "&sex=" + sex + "&categories=" + categories;

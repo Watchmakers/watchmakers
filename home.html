@@ -56,8 +56,6 @@
 				Select your country
 			</p>
 			<select id='countries' onchange="changeCountry();">
-<!-- 			  <option value="alleurope">All Europe</option>
-			  <option value="France">France</option> -->
 			</select>
 		</div>
 		</div>
@@ -94,8 +92,8 @@
 			  <div class="overSelect" id='activities'></div>
 			</div>
 			<div id="checkboxes">
-			  <label for="one">
-				<input type="checkbox" id="one" checked />All activities</label><br>
+			  <label for="All_Activities">
+				<input type="checkbox" id="All_Activities" onclick='actCheck(this)' checked />All activities</label><br>
 			</div>
 		  </div>
 		</form>
@@ -108,11 +106,10 @@
 		</div>
 
 	</div>
-	
 
     <script type="text/javascript" src="js/script.js"></script>
 
-			<script>
+	<script>
 		$(".btn-group > .daysclass").click(function(){
 			$(".btn-group > .daysclass").removeClass("active");
 			$(this).addClass("active");
@@ -122,28 +119,21 @@
 			$(".btn-group > .gender").removeClass("active");
 			$(this).addClass("active");
 		});
-		
 
 
-var expanded = false;
+		var expanded = false;
 
-function showCheckboxes() {
-  var checkboxes = document.getElementById("checkboxes");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
-}
-		</script>
-
-
-	<!-- <svg width="1000" height="1000">
-		<circle cx="100" cy="100" r="100" stroke="black" stroke-width="4" fill="none" />
-	</svg> -->
-
+		function showCheckboxes() {
+			var checkboxes = document.getElementById("checkboxes");
+			if (!expanded) {
+				checkboxes.style.display = "block";
+				expanded = true;
+			} else {
+				checkboxes.style.display = "none";
+				expanded = false;
+			}
+		}
+	</script>
 	
 </body>
 

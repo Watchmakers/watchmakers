@@ -117,6 +117,7 @@ select{
     z-index: 1000;
   position: absolute;
   background-color:white;
+  width: 200px;
 }
 
 #checkboxes label {
