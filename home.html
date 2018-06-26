@@ -9,9 +9,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="js/RadarChart.js"></script>
+	
 
 </head>
-<body>
+<body onload="addCountries(); addActivities();">
 
 	<div class="container">
 		
@@ -39,7 +40,7 @@
 		
 		<div class="row firstfilters">
 		<div class="days btn-group offset-1">
-			<button class="daysclass active">
+			<button class="daysclass active" id='daysweek'>
 				All days
 			</button >
 			<button class="daysclass">
@@ -54,18 +55,17 @@
 			<p id="selectCountry" >
 				Select your country
 			</p>
-			<select>
-				<option value="alleurope">All Europe</option>
-				<option value="France">France</option>
+			<select id='countries'>
+<!-- 			  <option value="alleurope">All Europe</option>
+			  <option value="France">France</option> -->
 			</select>
-			
 		</div>
 		</div>
 
 		<br>
 
 		<div class="row">
-			<div class = "offset-1">
+			<div class = " offset-1">
 				<div class="btn-group">
 					<button class="gender active">
 						Both
@@ -79,30 +79,30 @@
 				</div>
 			</div>
 			
-			<div class="countries btn-group offset-3">
+				<div class="countries btn-group offset-3">
 					
-				<p id="selectCountry" >
-					Select the activities
-				</p>
-				<form>
+<p id="selectCountry" >
+						Select the activities
+					</p>
+					<form>
 		  <div class="multiselect">
 			<div class="selectBox" onclick="showCheckboxes()">
 			
 			  <select>
 				<option>Select an option</option>
 			  </select>
-			  <div class="overSelect"></div>
+			  <div class="overSelect" id='activities'></div>
 			</div>
 			<div id="checkboxes">
-			  <label for="one">
+			  <!-- <label for="one">
 				<input type="checkbox" id="one" />First checkbox</label>
 			  <label for="two">
 				<input type="checkbox" id="two" />Second checkbox</label>
 			  <label for="three">
-				<input type="checkbox" id="three" />Third checkbox</label>
+				<input type="checkbox" id="three" />Third checkbox</label> -->
 			</div>
 		  </div>
-				</form>
+		</form>
 		</div>
 		
 
@@ -111,7 +111,6 @@
 			<div class="col-6" id="chart1"></div>
 			<div class="col-6" id="chart2"></div>
 		</div>
-		
 
 	</div>
 	
@@ -144,7 +143,6 @@ function showCheckboxes() {
     expanded = false;
   }
 }
-
 		</script>
 
 

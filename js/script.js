@@ -1,12 +1,70 @@
 var w = 400,
 	h = 400;
 
+var urlAPI = 'http://localhost:5000';
+var series_time = []
+
 var colorscale = d3.scale.category10();
 
 //Legend titles
-var LegendOptions = ['Smartphone','Tablet'];
+// var LegendOptions = ['Smartphone','Tablet'];
 
+//Functions countries
+function loadCountries(){
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", urlAPI  +"/Countries", false);
+	xhr.send();
+
+	return JSON.parse(xhr.responseText);
+}
+
+function addCountries(){
+	countries = loadCountries();
+	for(var i = 0 ; i < countries["Countries"].length ; i++){
+		$('#countries').append($('<option>', {
+	    value: countries["Countries"][i],
+	    text: countries["Countries"][i]
+		}));
+	};
+} 
+
+//Functions activities
+function loadActivities(){
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", urlAPI  +"/Activities", false);
+	xhr.send();
+
+	return JSON.parse(xhr.responseText);
+}
+
+function addActivities(){
+	activities = loadActivities();
+
+	var activitiesDiv = document.getElementById('checkboxes')
+
+	for(var i = 0 ; i < activities["Activities"].length ; i++){
+		$('#checkboxes').append('<label for=' + activities["Activities"][i] + ">" + '<input type="checkbox" id=' + activities["Activities"][i] + "/>" + activities["Activities"][i] + "</label>");
+	}
+
+} 
 //Data
+// var urlAPI1 = urlAPI + '/Homepage?country=' + country + '&daysweek=' + daysweek 
+// + "&sex=" + sex + "&categories=" + categories;
+
+// 	$.getJSON(urlAPI1, function (data) {
+// 		series_time = []
+
+// 		if(data['Error']){}
+// 		else{
+// 			for (var i = 0 ; i < data['Categories'].length ; i++) {
+// 				var categories = data['Categories'][i];
+// 				var times_spent = data['Time spent'][i];
+// 				series_time.push([categories , times_spent])
+// 			}
+// 		}
+// 	});
+
+
 var d = [
 		  [
 			{axis:"Personal care", value:1.4142},
@@ -17,7 +75,7 @@ var d = [
 			{axis:"Pet care",value:0.44},
 			{axis:"Child care",value:1.4142},
 			{axis:"Shopping",value:0.44},
-			{axis:"Leisure, social and associative life",value:1},
+			{axis:"Leisure and social and associative life",value:1},
 			{axis:"Household and family care",value:1.4142},
 			{axis:"Work / Study",value:2.8284},
 			{axis:"Travel",value:0.44},
@@ -52,7 +110,7 @@ var d2 = [
 			{axis:"Pet care",value:0.23},
 			{axis:"Child care",value:1.4142},
 			{axis:"Shopping",value:1},
-			{axis:"Leisure, social and associative life",value:0.23},
+			{axis:"Leisure and social and associative life",value:0.23},
 			{axis:"Household and family care",value:0.8},
 			{axis:"Work / Study",value:1},
 			{axis:"Travel",value:0.23},
