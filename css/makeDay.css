@@ -90,6 +90,15 @@ width:40px;
 }
 
 #monselect{
-width:200px;
+	width:200px;
+}
+
+#graphCountry{
+	top: -400px;
+}
+
+#container2{
+	top : 30px;
+	left :500px;
 }
 

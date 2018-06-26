@@ -16,15 +16,14 @@
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-
-
+	<script src="js/ownDay.js"></script>
 	<meta charset="utf-8">
+
 
 </head>
 
 
-<body>
+<body onload="addCountries();">
 
 <div class="container">
 
@@ -46,10 +45,7 @@
 	    <div class="col-sm-4 sidenav settings" style="padding-left: 2%;">
 	      <form>
 	      	<label>Select your country
-	      		<select id="monselect">
-					<option value="valeur1">France</option> 
-					<option value="valeur2" >Allemagne</option>
-					<option value="valeur3">Toutoune party</option>
+	      		<select id="countries">
 				</select>
 			</label>
 
@@ -67,8 +63,9 @@
 
 			<br>
 
-			<label>Select a week day
-	      		<select id="monselect">
+			<label>Select a day
+				<br>
+	      		<select id="days">
 					<option value="Monday">Monday</option>
 					<option value="Tuesday">Tuesday</option>
 					<option value="Wednesday">Wednesday</option>
@@ -79,12 +76,11 @@
 				</select>
 			</label>
 
-
 			<br>
 
 			<label>Categories<br>
 				<div id="selectActivity" class="selectActivityClass">
-		      		<select id="monselect"> <!-- style="width: 120px"> -->
+		      		<select id="activities"> <!-- style="width: 120px"> -->
 						<option value="Personal care">Personal care</option>
 						<option value="Sleep">Sleep</option>
 						<option value="Eating">Eating</option>
@@ -93,8 +89,8 @@
 						<option value="Pet care">Pet care</option>
 						<option value="Child care">Child care</option>
 						<option value="Shopping">Shopping</option>
-						<option value="Leisure, social and associative life">Leisure and social and associative life</option>
-						<option value="Household and family care">Household and family care</option>
+						<option value="Leisure, social and associative life">Leisure</option>
+						<option value="Household and family care">Household</option>
 						<option value="Work / Study">Work / Study</option>
 						<option value="Travel">Travel</option>
 						<option value="Transportations">Transportations</option>
@@ -120,17 +116,14 @@
 	     
 	    </div>
 
-		<div class="col-sm-8 graph">
-
-
-			
+		<div class="col-sm-8 graph" id = "graphPerso">
 
 			<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 			<script src="js/BuildChart.js"></script>
 			<!--<script src="js/buildPie.js"></script>-->
 
-			<input type="button" class="greenButton" id="submit" value="Submit" onclick="submit()">
+			<input type="button" class="greenButton" id="submit" value="Submit" onclick="clone()">
 
 		</div>
 	</div>

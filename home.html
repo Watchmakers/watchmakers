@@ -40,13 +40,13 @@
 		
 		<div class="row firstfilters">
 		<div class="days btn-group offset-1">
-			<button class="daysclass active" id='daysweek'>
+			<button class="daysclass active" id='daysweek' onclick="update();">
 				All days
 			</button >
-			<button class="daysclass">
+			<button class="daysclass" onclick="update();">
 				Week days
 			</button>
-			<button class="daysclass">
+			<button class="daysclass" onclick="update();">
 				Weekend
 			</button>
 		</div>
@@ -55,7 +55,7 @@
 			<p id="selectCountry" >
 				Select your country
 			</p>
-			<select id='countries' onchange="changeCountry();">
+			<select id='countries' onchange="changeCountry();update();">
 			</select>
 		</div>
 		</div>
@@ -65,13 +65,13 @@
 		<div class="row">
 			<div class = " offset-1">
 				<div class="btn-group">
-					<button class="gender active">
+					<button class="gender active" onclick="update();">
 						Both
 					</button>
-					<button class="gender ">
+					<button class="gender " onclick="update();">
 						Male
 					</button>
-					<button class="gender ">
+					<button class="gender " onclick="update();">
 						Female
 					</button>
 				</div>
@@ -93,7 +93,7 @@
 			</div>
 			<div id="checkboxes">
 			  <label for="All_Activities">
-				<input type="checkbox" id="All_Activities" onclick='actCheck(this)' checked />All activities</label><br>
+				<input type="checkbox" id="All_Activities" onclick='actCheck(this); update();' checked />All activities</label><br>
 			</div>
 		  </div>
 		</form>
