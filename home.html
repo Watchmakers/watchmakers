@@ -55,7 +55,7 @@
 			<p id="selectCountry" >
 				Select your country
 			</p>
-			<select id='countries'>
+			<select id='countries' onchange="changeCountry();">
 <!-- 			  <option value="alleurope">All Europe</option>
 			  <option value="France">France</option> -->
 			</select>
@@ -94,18 +94,13 @@
 			  <div class="overSelect" id='activities'></div>
 			</div>
 			<div id="checkboxes">
-			  <!-- <label for="one">
-				<input type="checkbox" id="one" />First checkbox</label>
-			  <label for="two">
-				<input type="checkbox" id="two" />Second checkbox</label>
-			  <label for="three">
-				<input type="checkbox" id="three" />Third checkbox</label> -->
+			  <label for="one">
+				<input type="checkbox" id="one" checked />All activities</label><br>
 			</div>
 		  </div>
 		</form>
 		</div>
 		
-
 
 		<div class="row">
 			<div class="col-6" id="chart1"></div>
@@ -116,7 +111,6 @@
 	
 
     <script type="text/javascript" src="js/script.js"></script>
-
 
 			<script>
 		$(".btn-group > .daysclass").click(function(){

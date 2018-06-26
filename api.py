@@ -5,8 +5,6 @@ import numpy as np
 import pandas as pd
 import time
 from flask_cors import CORS, cross_origin
-from pymongo import MongoClient
-import pymongo
 import pandas as pd
 import unicodedata
 import csv

@@ -28,6 +28,20 @@ function addCountries(){
 	};
 } 
 
+function changeCountry(){
+	var selectBox = document.getElementById("countries");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    //chart.series[0].data[i].update({name:sel[i].children[0].value , y: parseInt(sel[i].children[1].value)});
+    //RadarChart
+    alert(selectedValue);
+}
+
+
+//act
+function actCheck(acti){
+	alert(acti);
+}
+
 //Functions activities
 function loadActivities(){
 	var xhr = new XMLHttpRequest();
@@ -42,11 +56,16 @@ function addActivities(){
 
 	var activitiesDiv = document.getElementById('checkboxes')
 
-	for(var i = 0 ; i < activities["Activities"].length ; i++){
-		$('#checkboxes').append('<label for=' + activities["Activities"][i] + ">" + '<input type="checkbox" id=' + activities["Activities"][i] + "/>" + activities["Activities"][i] + "</label>");
+	for(var i = 0 ; i < activities["Categories"].length ; i++){
+		$('#checkboxes').append('<label for=' + activities["Categories"][i].replace(" ", "_") + ">" + "<input type='checkbox' id='" + activities["Categories"][i].replace(" ", "_") + "' onclick='actCheck("+ activities["Categories"][i].replace(" ", "_")+");' checked/>" + activities["Categories"][i] + "</label><br>");
 	}
 
 } 
+
+
+
+
+
 //Data
 // var urlAPI1 = urlAPI + '/Homepage?country=' + country + '&daysweek=' + daysweek 
 // + "&sex=" + sex + "&categories=" + categories;
