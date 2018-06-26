@@ -132,7 +132,9 @@ function createCountryChart(){
 
 	document.getElementsByClassName('highcharts-credits')[1].innerHTML = "";
 
-} 
+}
+
+
 
 function clone(){
 	var div = document.getElementById('graphPerso'),
@@ -145,5 +147,15 @@ function clone(){
 
 	document.getElementById("graphCountry").className += " col-md-6";
 
-	createCountryChart()
+	createCountryChart() ;
+
+	document.getElementById('previous').innerHTML = document.getElementById('previous').innerHTML.replace("Homepage", "Build Your Own Day")
+	document.getElementById('previous').parentElement.href = "make_own_day.html"
+
 }
+
+
+
+
+
+

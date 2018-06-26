@@ -196,7 +196,7 @@ var RadarChart = {
 					tooltip
 						.attr('x', newX)
 						.attr('y', newY)
-						.text((d.value*d.value).toFixed(1))
+						.text((d.value).toFixed(1))
 						.transition(200)
 						.style('opacity', 1);
 						
