@@ -114,18 +114,11 @@ select{
 #checkboxes {
   display: none;
   border: 1px #dadada solid;
-}
-
-#checkboxes {
-  display: block;
-  z-index: 1000;
+    z-index: 1000;
   position: absolute;
+  background-color:white;
 }
 
 #checkboxes label {
   z-index: 1000;
-}
-
-#checkboxes label:hover {
-  background-color: #1e90ff;
 }
