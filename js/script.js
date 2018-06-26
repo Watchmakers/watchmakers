@@ -22,18 +22,18 @@ function addCountries(){
 	countries = loadCountries();
 	for(var i = 0 ; i < countries["Countries"].length ; i++){
 		$('#countries').append($('<option>', {
-	    value: countries["Countries"][i],
-	    text: countries["Countries"][i]
+			value: countries["Countries"][i],
+			text: countries["Countries"][i]
 		}));
 	};
 } 
 
 function changeCountry(){
 	var selectBox = document.getElementById("countries");
-    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    //chart.series[0].data[i].update({name:sel[i].children[0].value , y: parseInt(sel[i].children[1].value)});
-    //RadarChart
-    alert(selectedValue);
+	var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	//chart.series[0].data[i].update({name:sel[i].children[0].value , y: parseInt(sel[i].children[1].value)});
+	//RadarChart
+	alert(selectedValue);
 }
 
 
@@ -62,106 +62,56 @@ function addActivities(){
 
 } 
 
+//Data on start 
+country = "France"
+daysweek = "All days of the week" 
+sex = "Males"
+categories = "Home maintenance, Child care, Eating, Household and family care, Leisure and social and associative life, Personal care, Pet care, Shopping, Sleep, Sport, Transportations, Travel, Unspecified, Work / Study"
 
+var urlAPI1 = urlAPI + '/PersonalData?country=' + country + '&daysweek=' + daysweek 
+ + "&sex=" + sex + "&categories=" + categories;
 
+var dtest1 = []
+var dtest2 = []
 
+var xhr = new XMLHttpRequest();
+xhr.open("GET", urlAPI1, false);
+xhr.send();
 
-//Data
-// var urlAPI1 = urlAPI + '/Homepage?country=' + country + '&daysweek=' + daysweek 
-// + "&sex=" + sex + "&categories=" + categories;
+var data = JSON.parse(xhr.responseText);
+if(data['Error']){}
+else{
 
-// 	$.getJSON(urlAPI1, function (data) {
-// 		series_time = []
+	for (var i = 0 ; i < data["Year2000"]['Categories'].length ; i++) {
+		var category = data["Year2000"]['Categories'][i];
+		var time_spent = data["Year2000"]['Time spent'][i];
+		dtest1[i] = {axis:category, value:time_spent}
+}
+	for (var i = 0 ; i < data["Year2010"]['Categories'].length ; i++) {
+		var category = data["Year2010"]['Categories'][i];
+		var time_spent = data["Year2010"]['Time spent'][i];
 
-// 		if(data['Error']){}
-// 		else{
-// 			for (var i = 0 ; i < data['Categories'].length ; i++) {
-// 				var categories = data['Categories'][i];
-// 				var times_spent = data['Time spent'][i];
-// 				series_time.push([categories , times_spent])
-// 			}
-// 		}
-// 	});
-
+		dtest2[i] = {axis:category, value:time_spent}
+	}
+}
 
 var d = [
-		  [
-			{axis:"Personal care", value:1.4142},
-			{axis:"Sleep", value:2.8284},
-			{axis:"Eating", value:1},
-			{axis:"Sport",value:0.7071},
-			{axis:"Home maintenance",value:0.7071},
-			{axis:"Pet care",value:0.44},
-			{axis:"Child care",value:1.4142},
-			{axis:"Shopping",value:0.44},
-			{axis:"Leisure and social and associative life",value:1},
-			{axis:"Household and family care",value:1.4142},
-			{axis:"Work / Study",value:2.8284},
-			{axis:"Travel",value:0.44},
-			{axis:"Transportations",value:1.22},
-			{axis:"Unspecified",value:0.23},
-			// ],[
-			// {axis:"Email",value:0.48},
-			// {axis:"Social Networks",value:0.41},
-			// {axis:"Internet Banking",value:0.27},
-			// {axis:"News Sportsites",value:0.28},
-			// {axis:"Search Engine",value:0.46},
-			// {axis:"View Shopping sites",value:0.29},
-			// {axis:"Paying Online",value:0.11},
-			// {axis:"Buy Online",value:0.14},
-			// {axis:"Stream Music",value:0.05},
-			// {axis:"Online Gaming",value:0.19},
-			// {axis:"Navigation",value:0.14},
-			// {axis:"App connected to TV program",value:0.06},
-			// {axis:"Offline Gaming",value:0.24},
-			// {axis:"Photo Video",value:0.17},
-			// {axis:"Reading",value:0.15},
-			]
+			dtest1
 		];
 
 var d2 = [
-		  [
-			{axis:"Personal care", value:1.8},
-			{axis:"Sleep", value:2},
-			{axis:"Eating", value:0.8},
-			{axis:"Sport",value:1.4142},
-			{axis:"Home maintenance",value:1.22},
-			{axis:"Pet care",value:0.23},
-			{axis:"Child care",value:1.4142},
-			{axis:"Shopping",value:1},
-			{axis:"Leisure and social and associative life",value:0.23},
-			{axis:"Household and family care",value:0.8},
-			{axis:"Work / Study",value:1},
-			{axis:"Travel",value:0.23},
-			{axis:"Transportations",value:1.4142},
-			{axis:"Unspecified",value:0},
-			// ],[
-			// {axis:"Email",value:0.48},
-			// {axis:"Social Networks",value:0.41},
-			// {axis:"Internet Banking",value:0.27},
-			// {axis:"News Sportsites",value:0.28},
-			// {axis:"Search Engine",value:0.46},
-			// {axis:"View Shopping sites",value:0.29},
-			// {axis:"Paying Online",value:0.11},
-			// {axis:"Buy Online",value:0.14},
-			// {axis:"Stream Music",value:0.05},
-			// {axis:"Online Gaming",value:0.19},
-			// {axis:"Navigation",value:0.14},
-			// {axis:"App connected to TV program",value:0.06},
-			// {axis:"Offline Gaming",value:0.24},
-			// {axis:"Photo Video",value:0.17},
-			// {axis:"Reading",value:0.15},
-			]
+			dtest2
 		];
+
 
 //Options for the Radar chart, other than default
 
 var mycfg = {
-  w: w,
-  h: h,
-  maxValue: 3,
-  levels: 9,
-  ExtraWidthX: 200
+	w: w,
+	h: h,
+	maxValue: 3,
+	levels: 9,
+	ExtraWidthX: 200
 }
 
 //Call function to draw the Radar chart
